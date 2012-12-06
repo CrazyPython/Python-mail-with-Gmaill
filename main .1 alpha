@@ -1,0 +1,15 @@
+import smtplib
+print"Body:"
+while True:
+    text = raw_input("")
+    if text == "<end>":
+        break
+username = raw_input("Username:") #just for now
+password = raw_input("Password:") #same here
+fromaddrr = username+"@gmail.com"
+toaddrr = raw_input("To")
+server = smtplib.SMTP('smtp.gmail.com:587')
+server.starttls()
+server.login(username,password)
+server.sendmail(toaddr, toaddrs, msg)
+server.quit()
