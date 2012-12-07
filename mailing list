@@ -1,0 +1,28 @@
+f = open("mailing_lists").readlines()
+lists = {}
+lists = load()
+def update():
+    global lists
+    for name in lists:
+        updateto = lists[name]
+        f = open(name)
+        for i in updateto:
+            f.write(i)
+def striplist(l):
+    return([x.strip() for x in l])
+def load():
+    global f
+    if not lists: #see if it is initlizaing
+        global lists
+        return lists
+    lists = {}
+    for i in f:
+        l = striplist(open(i.strip()).readlines()))
+        lists[i] = l
+    return lists
+def edit_list(name,replace):
+    global lists
+    lists[name] = replace
+    update()
+def get_list(name):
+    return list[name]
